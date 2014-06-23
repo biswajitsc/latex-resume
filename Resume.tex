@@ -1,0 +1,221 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+%
+% (c) 2012 Scott Clark <sc932@cornell.edu> cam.cornell.edu/~sc932
+%
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{array}
+\definecolor{dgray}{gray}{0.4}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=dgray
+}
+
+\usepackage[xetex]{graphicx}
+\usepackage{fontspec,xunicode}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\setmainfont[Scale=1.0]{Calibri}
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{7in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Biswajit Paria}  
+&Prembazar, P.O. Hijli\\ 
+UG (3rd year), Computer Science and Engineering
+& Kharagpur, India, PIN-721306\\
+Indian Institute of Technology Kharagpur& \href{mailto:biswajitsc@iitkgp.ac.in}{biswajitsc@iitkgp.ac.in}\\
+&\href{mailto:biswajitsc@gmail.com}{biswajitsc@gmail.com}
+\end{tabular*}
+\\[-10pt]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\ressubheading{Indian Institute of Technology Kharagpur}{Kharagpur, India}{B.Tech M.Tech Dual Degree (5 year program)}{2012 - 2017 (expected)}
+
+\ \\
+Undergraduate 3rd year\\
+Current CGPA (Semester 5) : \textbf{9.74/10.00}\\[5pt]
+\ressubheading{Kendriya Vidyalaya No. 1, IIT Kharagpur}{Kharagpur, India}{All India Senior School Certificate Examination (CBSE Board)}{2012}
+
+\ \\
+Aggregate Score: 92.4\%\\[5pt]
+\ressubheading{Kendriya Vidyalaya No. 1, IIT Kharagpur}{Kharagpur, India}{All India Secondary School Examination (CBSE Board)}{2010}
+
+\ \\
+CGPA: 9.8/10.0\\[-5pt]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Relevant Courses Taken}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabbing}
+Programming and Data Structures \hspace{2cm}\= Algorithms-I \hspace{2cm}\= Discrete Mathematics \\
+Introduction to Electronics \> Signals and Systems \> Switching Circuits and Logic Design \\
+Formal Languages and Automata Theory \> Software Engineering \> Probability and Statistics\\
+Computer Organization and Architechture\textsuperscript{\#}\> Compilers\textsuperscript{\#}\> Algorithms-II\textsuperscript{\#}\\
+Computer Organization Laboratory\textsuperscript{\#}\> Compilers Laboratory\textsuperscript{\#}\> Matrix Algebra\textsuperscript{\#}
+\end{tabbing}
+\vspace{-0.20cm}
+\hspace{12.5cm} \footnotesize{
+\textsuperscript{\#}To be completed before Dec 2014}\\[-5pt]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Projects and Papers}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\large \textbf{A Faceted Recommendation System for Scientific Articles (FeRoSA)}}\\
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+ \textbf{Guides: Prof. Animesh Mukherjee, Prof. Pawan Goyal}&Dec 2013-Mar 2014
+\end{tabular*}
+\begin{itemize}
+\item Developed a Paper Recommendation system based on citation relations and context.
+\item Generated citation tags using a Maximum Entropy Classifier on a set of selected features mainly consisting of linguistic features.
+\item Extracted topics from the paper texts using an LDA utility.
+\item Citation tags were used along with LDA output to generate citation recommendations.
+\item Created a GUI for the system.\\[10pt]
+\end{itemize}
+{\large \textbf{Segmented message broadcast in delay tolerant networks:
+An analytical and numerical study}}
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+ \textbf{Guides: Prof. Animesh Mukherjee, Prof. Niloy Ganguly}&May 2013
+\end{tabular*}
+\begin{itemize}
+\item Developed and simulated different Broadcasting strategies on different Network Topologies and measured relevant parameters.
+\item Verified asymptotic expressions for expected delays.
+\item Computed parameters for optimal Broadcasting.\\[10pt]
+\end{itemize}
+
+{\large \textbf{On Farey Table and its Compression for Space Optimization
+with Guaranteed Error Bounds}}
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+ \textbf{Guide: Prof. Partha Bhowmick}&May 2012
+\end{tabular*}
+\begin{itemize}
+\item Studied Number-Theoretic properties of Farey Sequences.
+\item Developed and implemented compression techniques for the Farey table.
+\item Developed mathematical expressions for maximum and average error in compression.
+\item Developed mathematical expressions for the number of columns in the compressed table.
+\end{itemize}
+
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Achievements and Scholarships}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{Overnite-2014 Programming Competition (ACM Certified)}  & \textsc{2014} \\
+My team BitBees secured the \textbf{3rd rank} in the onsite finals.\\[5pt]
+\textbf{International Online Programming Contest (IOPC), Techkriti- IIT Kanpur}  & \textsc{2014} \\
+My team BitBees secured the \textbf{25th rank} among a 1000 international teams.\\[5pt]
+\textbf{Sudocode, Kshitij- IIT Kharagpur}  & \textsc{2014} \\
+My team BitBees secured the \textbf{1st rank}. Event consisted of three problems based on Algorithms, Image Processing and NLP.\\[5pt]
+\textbf{ACM ICPC Regionals Kanpur Site}  & \textsc{2013} \\
+My team BitBees secured the \textbf{11th rank} in the online prelims and \textbf{13th rank} in the onsite regionals.\\[5pt]
+\textbf{Marauder's Map, Kshitij- IIT Kharagpur}  & \textsc{2013} \\
+Got the freshers' prize and \textbf{5th rank} overall in Marauder’s Map, an AI and Image processing event.\\[5pt]
+\textbf{Jagadish Bose National Science Talent Search Scholar}  & \textsc{2013} \\
+Selected among top \textbf{30} candidates in the state of West Bengal for the scholarship program.\\[5pt]
+ \textbf{IIT Joint Entrance Examination (IITJEE)}  & \textsc{2012} \\
+All India Rank-\textbf{671} in \textbf{General} category among half a million candidates.\\[5pt]
+ \textbf{Indian National Physics Olympiad (INPhO)}  & \textsc{2012} \\
+Qualified among \textbf{top 30} candidates to attend the Physics Orientation cum Selection Camp for the International Physics Olympiad.\\[5pt]
+ \textbf{Zonal Informatics Olympiad (ZIO)}  & \textsc{2012} \\
+Among \textbf{top 253} candidates all over India.\\[5pt]
+\textbf{Kishore Vaigyanik Protsahan Yojana (KVPY)}  & \textsc{2011} \\
+All India Rank-\textbf{7}. Scholarship Program funded by the Department of Science and Technology, India.\\[5pt]
+ \textbf{Indian National Mathematics Olympiad (INMO)} & \textsc{2010} \\
+All India Rank-\textbf{6}. Selected to attend the International Mathematics Olympiad Training Camp -2010 and 2011.\\[5pt]
+ \textbf{Kendriya Vidyalaya Sangathan (KVS) Junior Mathematics Olympiad} & \textsc{2010} \\
+All India Rank-\textbf{2}. Held in all KVS schools.\\[5pt]
+\textbf{Australian Mathematics Competition (AMC)- Intermediate Division}  & \textsc{2009} \\
+Recieved a Gold Medal along with \textbf{23} other medallists in the world.
+\end{tabular*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Programming Skills}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tabular*}{5in}{ll}
+{\bf Advanced}& \hspace{1cm}C, C++, \textsc{Java}\\[2pt]
+{\bf Basic} &\hspace{1cm}\LaTeX, \textsc{sql, bash, Python, Mathematica}\\[-5pt]
+\end{tabular*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Other Activities}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Programming Contests, Math Olympiad Teaching and Math Olympiad Interhall competitions, Drawing, Painting
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{References}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{Dr. Animesh Mukherjee}  & animeshm@cse.iitkgp.ernet.in\\
+Assistant Professor, Dept. of Computer Science and Engineering\\
+Indian Institute of Technology Kharagpur\\[4pt]
+\textbf{Dr. Niloy Ganguly}  & niloy@cse.iitkgp.ernet.in\\
+Associate Professor, Dept. of Computer Science and Engineering\\
+Indian Institute of Technology Kharagpur\\[4pt]
+\textbf{Dr. Partha Bhowmick}  & pb@cse.iitkgp.ernet.in\\
+Associate Professor, Dept. of Computer Science and Engineering\\
+Indian Institute of Technology Kharagpur
+\end{tabular*}
+
+\end{document}
