@@ -8,6 +8,8 @@ Requirements
 ------------
 LaTeX and XeTeX must be installed to compile the TeX code.
 
+Linux Users must install the Calibri.ttf font given in the fonts directory
+
 Compile
 -------
 To compile enter the following command
