@@ -8,7 +8,7 @@ Requirements
 ------------
 LaTeX and XeTeX must be installed to compile the TeX code.
 
-Linux Users must install the Calibri.ttf font given in the fonts directory
+Linux Users must install the Calibri font. You can get it for free from [here](http://www.fontpalace.com/font-details/Calibri/)
 
 Compile
 -------
