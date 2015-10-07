@@ -1,226 +1,275 @@
-% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
-% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
-% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
-%
-% (c) 2012 Scott Clark <sc932@cornell.edu> cam.cornell.edu/~sc932
-%
-% (c) 2014 Biswajit Paria <biswajitsc@gmail.com> http://cse.iitkgp.ac.in/~bparia
-% This work has been copied from Scott Clark's repo on github (https://github.com/sc932/resume) and then modified.
-% * Changed font.
-% * Now uses xetex.
-%
-%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Simple LaTeX Resume by:
+%%		Biswajit Paria, 
+%%		Email: biswajitsc AT gmail (replace 'gmail' by 'gmail.com')
+%% Use XeTeX to compile.
+%% Free calibri fonts added to Fonts folder.
+%% Fonts downloaded from 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[letterpaper,11pt]{article}
-\newlength{\outerbordwidth}
+%%%%%%%%%%%%%%%%%
+%%  PREAMBLE    %
+%%%%%%%%%%%%%%%%%
+
+
+\documentclass[a4paper,10pt,oneside]{article}
+
+\usepackage[xetex]{graphicx}
+\usepackage{fontspec,xunicode}
+
 \pagestyle{empty}
 \raggedbottom
 \raggedright
 \usepackage[svgnames]{xcolor}
-\usepackage{framed}
 \usepackage{hyperref}
 \usepackage{tocloft}
 \usepackage{array}
+\usepackage{changepage}
 \definecolor{dgray}{gray}{0.4}
-\hypersetup{
-  colorlinks=true,
-  urlcolor=dgray
-}
 
-\usepackage[xetex]{graphicx}
-\usepackage{fontspec,xunicode}
-\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-\setmainfont[Scale=1.0]{Calibri}
-%-----------------------------------------------------------
-%Edit these values as you see fit
-
-\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
-\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
-\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
-
-
-%-----------------------------------------------------------
-%Margin setup
 
 \setlength{\evensidemargin}{-0.25in}
 \setlength{\headheight}{0in}
 \setlength{\headsep}{0in}
 \setlength{\oddsidemargin}{-0.25in}
-\setlength{\paperheight}{11in}
-\setlength{\paperwidth}{8.5in}
+% \setlength{\paperheight}{11in}
+% \setlength{\paperwidth}{8.5in}
 \setlength{\tabcolsep}{0in}
-\setlength{\textheight}{9.5in}
-\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+\setlength{\textwidth}{6.7in}
 \setlength{\topmargin}{-0.3in}
 \setlength{\topskip}{0in}
 \setlength{\voffset}{0.1in}
 
+% \setlength{\\indent}{4em}
+% \setlength{\\skip}{1em}
+\renewcommand{\baselinestretch}{1.2}
 
-%-----------------------------------------------------------
-%Custom commands
-\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
-\newcommand{\resheading}[1]{\vspace{8pt}
-  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
-    \begin{shaded}
-\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
-    \end{shaded}
-  }\vspace{-5pt}
+\usepackage[xetex]{graphicx}
+\usepackage{fontspec,xunicode}
+\usepackage{enumitem}
+% \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+% \setmainfont[Scale=1.1]{Calibri}
+
+\setmainfont
+[Path=./Fonts/,
+ItalicFont=CalibriItalic,
+BoldFont=CalibriBold,
+BoldItalicFont=CalibriBoldItalic,
+Scale=1.1]
+{Calibri.ttf}
+
+\definecolor{shadecolor}{gray}{0.75}
+
+\newcommand{\heading}[1]{
+ {\Large \textbf{#1}}
+  \vspace{0.4em}
+  \hrule
+  \vspace{0.4em}
 }
-\newcommand{\ressubheading}[4]{
-\begin{tabular*}{7in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
-		\textbf{#1} & #2 \\
-		\textit{#3} & \textit{#4} \\
-\end{tabular*}\vspace{-6pt}}
-%-----------------------------------------------------------
 
+\newcommand{\columnsplit}[4]{
+  \begin{tabular*}{\textwidth}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+   \parbox{#1}{
+    \begin{flushleft}
+     #2
+    \end{flushleft}
+   } &
+   \parbox{#3}{
+    \begin{flushright}
+     #4
+    \end{flushright}
+   }
+  \end{tabular*}
+}
+
+\newcommand{\SmallEntryGap}{ \vspace{0.6em} }
+\newcommand{\EntryGap}{ ~\\ }
+
+\newcommand{\doindent}[1]{\begin{adjustwidth}{2em}{} #1 \end{adjustwidth}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACTUAL DOCUMENT.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-\textbf{\Large Biswajit Paria}  
-&Prembazar, P.O. Hijli\\ 
-UG (3rd year), Computer Science and Engineering
-& Kharagpur, India, PIN-721306\\
-Indian Institute of Technology Kharagpur& \href{mailto:biswajitsc@iitkgp.ac.in}{biswajitsc@iitkgp.ac.in}\\
-&\href{mailto:biswajitsc@gmail.com}{biswajitsc@gmail.com}
-\end{tabular*}
-\\[-10pt]
+%%%%%%%%%%%%%%%
+% TITLE BLOCK %
+%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Education}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\columnsplit{4in}{
+  {\huge Biswajit Paria}\\
+  4th year Undergraduate\\
+  Dept. of Computer Science and Engineering\\
+  Indian Institute of Technology Kharagpur
+  }
+  {2in}{
+  ~\\[1.3em]
+  biswajitsc@iitkgp.ac.in\\
+  biswajitsc@gmail.com\\
+  +91-8348949676
+  }
+
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% EDUCATION           %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\ressubheading{Indian Institute of Technology Kharagpur}{Kharagpur, India}{B.Tech M.Tech Dual Degree (5 year program)}{2012 - 2017 (expected)}
+\heading{Education}
 
-\ \\
-Undergraduate 3rd year\\
-Current CGPA (Semester 5) : \textbf{9.74/10.00}\\[5pt]
-\ressubheading{Kendriya Vidyalaya No. 1, IIT Kharagpur}{Kharagpur, India}{All India Senior School Certificate Examination (CBSE Board)}{2012}
+\SmallEntryGap
+\emph{B.Tech - M.Tech (Dual Degree)} \hfill Jul 2012 - Apr 2017 (Expected)\\
+  \doindent{Indian Institute of Technology Kharagpur, India\\
+  CGPA: \textbf{9.72}/10.00, Rank: \textbf{1}}
 
-\ \\
-Aggregate Score: 92.4\%\\[5pt]
-\ressubheading{Kendriya Vidyalaya No. 1, IIT Kharagpur}{Kharagpur, India}{All India Secondary School Examination (CBSE Board)}{2010}
+\SmallEntryGap
+  \emph{CBSE Board Senior Secondary School Examination (AISSCE)} \hfill Jul 2010 - Apr 2012\\
+  \doindent{Kendriya Vidyalaya IIT Kharagpur\\
+  Marks percentage: \textbf{92.4\%}}
 
-\ \\
-CGPA: 9.8/10.0\\[-5pt]
+\SmallEntryGap
+\emph{CBSE Board Secondary School Examination (AISSE)} \hfill Apr 2005 - Apr 2010\\
+  \doindent{Kendriya Vidyalaya IIT Kharagpur\\
+  GPA: \textbf{9.8}/10.0}
 
+\EntryGap
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Relevant Courses Taken}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{tabbing}
-Programming and Data Structures \hspace{2cm}\= Algorithms-I \hspace{2cm}\= Discrete Mathematics \\
-Introduction to Electronics \> Signals and Systems \> Switching Circuits and Logic Design \\
-Formal Languages and Automata Theory \> Software Engineering \> Probability and Statistics\\
-Computer Organization and Architechture\textsuperscript{\#}\> Compilers\textsuperscript{\#}\> Algorithms-II\textsuperscript{\#}\\
-Computer Organization Laboratory\textsuperscript{\#}\> Compilers Laboratory\textsuperscript{\#}\> Matrix Algebra\textsuperscript{\#}
-\end{tabbing}
-\vspace{-0.20cm}
-\hspace{12.5cm} \footnotesize{
-\textsuperscript{\#}To be completed before Dec 2014}\\[-5pt]
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% INTERNSHIPS         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Projects and Papers}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-{\large \textbf{A Faceted Recommendation System for Scientific Articles (FeRoSA)}}\\
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
- \textbf{Guides: Prof. Animesh Mukherjee, Prof. Pawan Goyal}&Dec 2013-Mar 2014
-\end{tabular*}
-\begin{itemize}
-\item Developed a Paper Recommendation system based on citation relations and context.
-\item Generated citation tags using a Maximum Entropy Classifier on a set of selected features mainly consisting of linguistic features.
-\item Extracted topics from the paper texts using an LDA utility.
-\item Citation tags were used along with LDA output to generate citation recommendations.
-\item Created a GUI for the system.\\[10pt]
-\end{itemize}
-{\large \textbf{Segmented message broadcast in delay tolerant networks:
-An analytical and numerical study}}
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
- \textbf{Guides: Prof. Animesh Mukherjee, Prof. Niloy Ganguly}&May 2013
-\end{tabular*}
-\begin{itemize}
-\item Developed and simulated different Broadcasting strategies on different Network Topologies and measured relevant parameters.
-\item Verified asymptotic expressions for expected delays.
-\item Computed parameters for optimal Broadcasting.\\[10pt]
+\heading{Internships}
+\SmallEntryGap
+\emph{Deep Computational Phenotyping} \hfill May 2015 - Jul 2015\\
+Guide: Prof. Yan Liu, University of Southern California
+\begin{itemize}[noitemsep, nolistsep]
+ \item Used Deep Learning on ICU patients' data to predict health outcomes.
+ \item Analysed features learnt by the neural network in the final hidden layer.
+ \item Identified nodes in the neural network which cause a particular outcome.
+ \item Attempted to learn their activations using human interpretable models such as decision trees.
 \end{itemize}
 
-{\large \textbf{On Farey Table and its Compression for Space Optimization
-with Guaranteed Error Bounds}}
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
- \textbf{Guide: Prof. Partha Bhowmick}&May 2012
-\end{tabular*}
-\begin{itemize}
-\item Studied Number-Theoretic properties of Farey Sequences.
-\item Developed and implemented compression techniques for the Farey table.
-\item Developed mathematical expressions for maximum and average error in compression.
-\item Developed mathematical expressions for the number of columns in the compressed table.
+
+%%%%%%%%%%%%%%%%%%
+%% Projects     %%
+%%%%%%%%%%%%%%%%%%
+
+\EntryGap
+\heading{Research Projects}
+\SmallEntryGap
+\emph{Hierarchical Feature Learning using Deep Learning} \hfill Jul 2015 - Present\\
+Ongoing B.Tech Thesis.\\
+Guide: Prof. Pabitra Mitra, IIT Kharagpur
+\begin{itemize}[noitemsep, nolistsep]
+  \item To study the input patterns learnt by the nodes of a deep neural network.
+  \item To devise methods for identifying feature hierarchies through statistical analysis.
+  \item To identify sub-tasks of the original learning task.
 \end{itemize}
 
+\SmallEntryGap
+
+\emph{A Search Engine for Mathematical Formulae} \hfill Jul 2015 - Present \\
+Ongoing NLP course project.\\
+Guide: Prof. Pawan Goyal, IIT Kharagpur
+\begin{itemize}[noitemsep, nolistsep]
+ \item To build a search engine capable of searching both plain text and LaTeX equations.
+ \item To leverage natural language text in research articles for finding variable-symbol mappings.
+ \item To develop a probabilistic model for capturing variable-symbol mappings.
+ \item To use the probabilistic model for better ranking.
+\end{itemize}
+
+\SmallEntryGap
+
+\emph{On Farey Table and its Compression for Space Optimization with Guaranteed Error Bounds} \\
+Guide: Prof. Partha Bhowmick, IIT Kharagpur \hfill May 2013 - Jul 2013 \\
+\begin{itemize}[noitemsep, nolistsep]
+ \item Leveraged Number-Theoretic properties of Farey sequences to develop compression algorithms for the Farey table.
+ \item Worked out expressions for the loss in accuracy and size of the compressed table.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% OTHER PROJECTS     %%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\EntryGap
 \pagebreak
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Achievements and Scholarships}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-\textbf{Overnite-2014 Programming Competition (ACM Certified)}  & \textsc{2014} \\
-My team BitBees secured the \textbf{3rd rank} in the onsite finals.\\[5pt]
-\textbf{International Online Programming Contest (IOPC), Techkriti- IIT Kanpur}  & \textsc{2014} \\
-My team BitBees secured the \textbf{25th rank} among a 1000 international teams.\\[5pt]
-\textbf{Sudocode, Kshitij- IIT Kharagpur}  & \textsc{2014} \\
-My team BitBees secured the \textbf{1st rank}. Event consisted of three problems based on Algorithms, Image Processing and NLP.\\[5pt]
-\textbf{ACM ICPC Regionals Kanpur Site}  & \textsc{2013} \\
-My team BitBees secured the \textbf{11th rank} in the online prelims and \textbf{13th rank} in the onsite regionals.\\[5pt]
-\textbf{Marauder's Map, Kshitij- IIT Kharagpur}  & \textsc{2013} \\
-Got the freshers' prize and \textbf{5th rank} overall in Marauder’s Map, an AI and Image processing event.\\[5pt]
-\textbf{Jagadish Bose National Science Talent Search Scholar}  & \textsc{2013} \\
-Selected among top \textbf{30} candidates in the state of West Bengal for the scholarship program.\\[5pt]
- \textbf{IIT Joint Entrance Examination (IITJEE)}  & \textsc{2012} \\
-All India Rank-\textbf{671} in \textbf{General} category among half a million candidates.\\[5pt]
- \textbf{Indian National Physics Olympiad (INPhO)}  & \textsc{2012} \\
-Qualified among \textbf{top 30} candidates to attend the Physics Orientation cum Selection Camp for the International Physics Olympiad.\\[5pt]
- \textbf{Zonal Informatics Olympiad (ZIO)}  & \textsc{2012} \\
-Among \textbf{top 253} candidates all over India.\\[5pt]
-\textbf{Kishore Vaigyanik Protsahan Yojana (KVPY)}  & \textsc{2011} \\
-All India Rank-\textbf{7}. Scholarship Program funded by the Department of Science and Technology, India.\\[5pt]
- \textbf{Indian National Mathematics Olympiad (INMO)} & \textsc{2010} \\
-All India Rank-\textbf{6}. Selected to attend the International Mathematics Olympiad Training Camp -2010 and 2011.\\[5pt]
- \textbf{Kendriya Vidyalaya Sangathan (KVS) Junior Mathematics Olympiad} & \textsc{2010} \\
-All India Rank-\textbf{2}. Held in all KVS schools.\\[5pt]
-\textbf{Australian Mathematics Competition (AMC)- Intermediate Division}  & \textsc{2009} \\
-Recieved a Gold Medal along with \textbf{23} other medallists in the world.
-\end{tabular*}
-
-
+\heading{Other Projects}
+\begin{itemize}
+  \setlength{\itemsep}{0.0em}
+  \item \emph{A Search and Recommendation Engine for Nikon Cameras} \hfill Jan 2015 - Apr 2015\\
+  Information Retrieval Course Project\\
+  Novel idea of automatic specifications extraction from a free form text query.
+  \item \emph{TinyC Compiler}, Compilers Course Project \hfill Jul 2014 - Nov 2014\\
+  A compiler for a C-like language but with a reduced functionality.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Programming Skills}
+%% ACADEMIC HONORS & AWARDS %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{tabular*}{5in}{ll}
-{\bf Advanced}& \hspace{1cm}C, C++, \textsc{Java}\\[2pt]
-{\bf Basic} &\hspace{1cm}\LaTeX, \textsc{sql, bash, Python, Mathematica}\\[-5pt]
-\end{tabular*}
+\EntryGap
+\heading{Academic Honors and Awards}
+\begin{itemize}
+ \setlength{\itemsep}{0.0em}
+ \item \emph{Charubala Devi Memorial Prize} \hfill 2015\\
+Awarded for being the \textbf{best in order of merit} among all third year students.
+\item \emph{Jagadish Bose National Science Talent Search (JBNSTS) Scholar} \hfill 2013\\
+One of the \textbf{30} selected scholars in the state of West Bengal.
+\item\emph{Kishore Vaigyanik Protsahan Yojana (KVPY) Scholar} \hfill 2011\\
+Scholarship sponsored by Dept. of Science and Technology, MHRD, Govt. of India.\\
+Secured \textbf{7th} rank in India.
+\item\emph{Indian National Mathematical Olympiad (INMO) Awardee} \hfill 2010\\
+Selected among top \textbf{30} candidates in India to attend the International Mathematical Olympiad Training Camp (IMOTC).
+\item\emph{Australian Mathematics Competition (AMC) Gold Medallist}\hfill 2009\\
+Recieved a Gold Medal in the Intermediate Division. One of the \textbf{23} other medallists in the world.
+\end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Other Activities}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Programming Contests, Math Olympiad Teaching and Math Olympiad Interhall competitions, Drawing, Painting
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{References}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% OTHER HONORS & AWARDS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-\textbf{Dr. Animesh Mukherjee}  & animeshm@cse.iitkgp.ernet.in\\
-Assistant Professor, Dept. of Computer Science and Engineering\\
-Indian Institute of Technology Kharagpur\\[4pt]
-\textbf{Dr. Niloy Ganguly}  & niloy@cse.iitkgp.ernet.in\\
-Associate Professor, Dept. of Computer Science and Engineering\\
-Indian Institute of Technology Kharagpur\\[4pt]
-\textbf{Dr. Partha Bhowmick}  & pb@cse.iitkgp.ernet.in\\
-Associate Professor, Dept. of Computer Science and Engineering\\
-Indian Institute of Technology Kharagpur
-\end{tabular*}
+\EntryGap
+\heading{Other Honors and Awards}
+\begin{itemize}
+\item \emph{ACM ICPC World Finalist} \hfill 2015\\
+Represented IIT Kharagpur at the world finals of the International Collegiate Programming Competition (ICPC) held in Marakkech, Morocco. One of the \textbf{7} teams from India.
+\end{itemize}
+
+
+%%%%%%%%%%%%
+%% SKILLS %%
+%%%%%%%%%%%%
+
+\EntryGap
+\heading{Skills}
+\EntryGap
+\textbf{Proficient:} C, C++, Python, Java\\
+\textbf{Basic:} Mathematica, \LaTeX
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% RELEVANT COURSES   %%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\EntryGap
+\heading{Relevant Courses}
+\SmallEntryGap
+\textbf{Completed}
+\begin{tabbing}
+Machine Learning, ~~~~~~~~~~~~~~~~ \= Discrete Mathematics, ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\= Probability and Statistics,\\
+Matrix Algebra, \> Algorithms-I, \> Algorithms-II, \\
+Information Retrieval, \> Formal Languages and Automata Theory, \> Software Engineering, \\
+Operating Systems, \> Computer Organization and Architechture, \> Compilers, \\
+Computer Networks, \> Database Management Systems
+\end{tabbing}
+
+\SmallEntryGap
+\textbf{Ongoing}\\
+\begin{tabbing}
+Artificial Intelligence, ~~~~~~~~~~~~~\= Speech and Natural Language Processing, \= ~~~~~~~Theory of Computation,\\
+Advanced Graph Theory, \> Parallel and Distributed Algorithms
+\end{tabbing}
 
 \end{document}
