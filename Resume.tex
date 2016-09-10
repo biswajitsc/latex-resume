@@ -1,207 +1,213 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Simple LaTeX Resume by:
-%%		Biswajit Paria, 
-%%		Email: biswajitsc AT gmail (replace 'gmail' by 'gmail.com')
-%% Use XeTeX to compile.
-%% Free calibri fonts added to Fonts folder.
-%% Fonts downloaded from 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Simple LaTeX Resume by Biswajit Paria %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%
-%%  PREAMBLE    %
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Preamble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\documentclass[10pt]{article}
 
-\documentclass[a4paper,10pt,oneside]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{algorithm, algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{xcolor}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{parskip}
+\usepackage[a4paper, total={7in,10.3in}]{geometry}
 
-\usepackage[xetex]{graphicx}
-\usepackage{fontspec,xunicode}
+\pagenumbering{gobble}
 
-\pagestyle{empty}
-\raggedbottom
-\raggedright
-\usepackage[svgnames]{xcolor}
-\usepackage{hyperref}
-\usepackage{tocloft}
-\usepackage{array}
-\usepackage{changepage}
-\definecolor{dgray}{gray}{0.4}
-
-
-\setlength{\evensidemargin}{-0.25in}
-\setlength{\headheight}{0in}
-\setlength{\headsep}{0in}
-\setlength{\oddsidemargin}{-0.25in}
-% \setlength{\paperheight}{11in}
-% \setlength{\paperwidth}{8.5in}
-\setlength{\tabcolsep}{0in}
-\setlength{\textheight}{10in}
-\setlength{\textwidth}{6.7in}
-\setlength{\topmargin}{-0.3in}
-\setlength{\topskip}{0in}
-\setlength{\voffset}{0.1in}
-
-% \setlength{\\indent}{4em}
-% \setlength{\\skip}{1em}
-\renewcommand{\baselinestretch}{1.2}
-
-\usepackage[xetex]{graphicx}
-\usepackage{fontspec,xunicode}
-\usepackage{enumitem}
-% \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-% \setmainfont[Scale=1.1]{Calibri}
-
-\setmainfont
-[Path=./Fonts/,
-ItalicFont=CalibriItalic,
-BoldFont=CalibriBold,
-BoldItalicFont=CalibriBoldItalic,
-Scale=1.1]
-{Calibri.ttf}
-
-\definecolor{shadecolor}{gray}{0.75}
+\setlength{\parindent}{0pt}
+\setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+\renewcommand{\baselinestretch}{1}
 
 \newcommand{\heading}[1]{
- {\Large \textbf{#1}}
+ {\large \textbf{#1}}
   \vspace{0.4em}
   \hrule
   \vspace{0.4em}
 }
 
-\newcommand{\columnsplit}[4]{
-  \begin{tabular*}{\textwidth}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
-   \parbox{#1}{
-    \begin{flushleft}
-     #2
-    \end{flushleft}
-   } &
-   \parbox{#3}{
-    \begin{flushright}
-     #4
-    \end{flushright}
-   }
-  \end{tabular*}
+\newcommand{\EntryGap}{\vspace{0.8em}}
+\newcommand{\SmallEntryGap}{\vspace{0.4em}}
+\newcommand{\mdot}{$\ \ \cdot\ \ $}
+
+\newcommand{\indentedpar}[1]{
+  \hangindent=1cm \hangafter=0 #1
 }
 
-\newcommand{\SmallEntryGap}{ \vspace{0.6em} }
-\newcommand{\EntryGap}{ ~\\ }
+\newenvironment{compactitemize}
+{ \begin{itemize}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{ \end{itemize}}
 
-\newcommand{\doindent}[1]{\begin{adjustwidth}{2em}{} #1 \end{adjustwidth}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% ACTUAL DOCUMENT.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-%%%%%%%%%%%%%%%
-% TITLE BLOCK %
-%%%%%%%%%%%%%%%
 
 
-\columnsplit{4in}{
-  {\huge Biswajit Paria}\\
-  4th year Undergraduate\\
-  Dept. of Computer Science and Engineering\\
-  Indian Institute of Technology Kharagpur
-  }
-  {2in}{
-  ~\\[1.3em]
-  biswajitsc@iitkgp.ac.in\\
-  biswajitsc@gmail.com\\
-  +91-8348949676
-  }
 
-  
-%%%%%%%%%%%%%%%%%%%%%%%%%
-%% EDUCATION           %%
-%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+{\Large \textbf{Biswajit Paria}}\\
+5th year undergraduate (dual degree) \hfill biswajitsc@iitkgp.ac.in\\
+Dept. of Computer Science and Engineering \hfill biswajitsc@gmail.com\\
+Indian Institute of Technology Kharagpur \hfill  +91-8348949676  
+\EntryGap
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EDUCATION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \heading{Education}
-
 \SmallEntryGap
-\emph{B.Tech - M.Tech (Dual Degree)} \hfill Jul 2012 - Apr 2017 (Expected)\\
-  \doindent{Indian Institute of Technology Kharagpur, India\\
-  Current CGPA: \textbf{9.76}/10.00, Institute Rank: \textbf{1}}
+\textbf{Indian Institute of Technology Kharagpur, India} \hfill Jul 2012 - Apr 2017\\
+Bachelor and Master of Technology (dual degree) with Honours\\
+in Computer Science and Engineering\\
+GPA 9.77/10.0, highest among final year dual degree students.
 
-\SmallEntryGap
-  \emph{CBSE Board Senior Secondary School Examination (AISSCE)} \hfill Jul 2010 - Apr 2012\\
-  \doindent{Kendriya Vidyalaya IIT Kharagpur\\
-  Marks percentage: \textbf{92.4\%}}
+\EntryGap
+\textbf{Kendriya Vidyalaya IIT Kharagpur} \hfill Jul 2010 - Apr 2012\\
+All India Senior School Certificate Examination (AISSCE)\\
+Central Board of Secondary Education (CBSE)\\
+Percentage score 92.4\%
 
-\SmallEntryGap
-\emph{CBSE Board Secondary School Examination (AISSE)} \hfill Apr 2005 - Apr 2010\\
-  \doindent{Kendriya Vidyalaya IIT Kharagpur\\
-  GPA: \textbf{9.8}/10.0}
+\EntryGap
+\textbf{Kendriya Vidyalaya IIT Kharagpur} \hfill Apr 2005 - Apr 2010\\
+All India Secondary School Examination (AISSE)\\
+Central Board of Secondary Education (CBSE)\\
+GPA 9.8/10.0
 
 \EntryGap
 
-%%%%%%%%%%%%%%%%%%%%%%%%%
-%% INTERNSHIPS         %%
-%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\heading{Interests}
+
+\SmallEntryGap
+
+Interested in Machine Learning. Currently working in the area of Deep Learning,
+and reading on other core machine learning areas such as statistics
+and optimization.
+
+\EntryGap
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTERNSHIPS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \heading{Internships}
+
+\textbf{Indian Institute of Science, Bangalore, India} \hfill May 2016 - Jul 2016\\
+Natural Language Inference (NLI) using Deep Learning for NLP\\
+under \emph{Prof. Ambedkar Dukkipati}
+
 \SmallEntryGap
-\emph{Computational Phenotyping using Deep Neural Networks} \hfill May 2015 - Jul 2015\\
-Guide: Dr. Yan Liu, University of Southern California
-\begin{itemize}[noitemsep, nolistsep]
- \item Used Deep Neural Networks on ICU patients' data to predict health outcomes.
- \item Analysed features learnt by the neural network in the final hidden layer.
- \item Identified nodes in the neural network which cause a particular outcome.
- \item Attempted to learn their activations using human interpretable models such as decision trees.
-\end{itemize}
+
+\indentedpar{
+  Worked on NLI with the Stanford NLI dataset. Given two sentences, the task
+  is to determine whether the sentences are related as an entailment, contradiction
+  or are neutral. We explored a variety of methods using LSTMs, Attention
+  Models, and Dependency Parses. Eventually, we came up with an hybrid model which
+  is currently under preparation for submission in a reputed conference.
+}
+
+\SmallEntryGap
+
+\textbf{University of Southern California, Los Angeles, USA} \hfill May 2015 - Jul 2015\\
+Computational Phenotyping using Deep Neural Networks\\
+under \emph{Prof. Yan Liu}
+
+\SmallEntryGap
+
+\indentedpar{
+  Worked with ICU time series data consisting of a multitude of medical parameters
+  and used deep learning to predict health outcomes. As a regularizer we used a
+  laplacian prior of label co-occurence matrix. Further, we analyzed the
+  activations of the trained neural network using decision trees in order to 
+  understand the features learned. We also extracted the maximally activating 
+  inputs for the most decorrelated nodes and identified distinct features learned
+  by the nodes. This kind of analysis is a step towards automated symptom analysis
+  in patients.
+}
+
+\SmallEntryGap
+\textbf{Indian Institute of Technology Kharagpur, India} \hfill May 2014 - Jul 2014\\
+On Farey Table and its Compression for Space Optimization with Guaranteed Error Bounds\\
+under \emph{Prof. Partha Bhowmick}
+
+\SmallEntryGap
+
+\indentedpar{
+  Studied the number theoretic properties of Farey Sequences and the
+  Farey Table, and came up with a novel algorithm for the lossy compression of the 
+  Farey Table. The Farey Table is an useful data-structure in digital geometry.
+  It's quadratic size ($\Theta(n^2)$) prohibits its use for large dimensions. The
+  compressed table has a size of ($O(n\log n)$), thus allowing table creation for
+  large $n$.
+}
 
 
-%%%%%%%%%%%%%%%%%%
-%% Projects     %%
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Projects %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \EntryGap
 \heading{Research Projects}
 \SmallEntryGap
-\emph{Regularization methods for Deep Neural Networks} \hfill Jul 2015 - Present\\
-Ongoing B.Tech Thesis.\\
-Guide: Dr. Pabitra Mitra, IIT Kharagpur
-\begin{itemize}[noitemsep, nolistsep]
-  \item To study current regularizers and identify their advantages and drawbacks.
-  \item To develop regularizers as an improvement over or independent of current regularizers.
-\end{itemize}
+
+\textbf{Bachelor's Thesis} \hfill Jul 2015 - Apr 2016\\
+Visualization Regularizers for Neural Network based Image Recognition\\
+Advisor: \emph{Prof. Pabitra Mitra}
 
 \SmallEntryGap
 
-\emph{Leverage based Sampling of Matrix Rows for Scalable Empirical Risk Minimization} \hfill Jan 2016 - Present \\
-Advanced Machine Learning course project.\\
-Guide: Dr. Sourangshu Bhattacharya, IIT Kharagpur and Dr. Anirban Dasgupta, IIT Gandhinagar
-\begin{itemize}[noitemsep, nolistsep]
- \item On sampling matrix rows for scalable learning along with error guarantees.
- \item To build on the recent work on leverage score based sampling.
-\end{itemize}
+\indentedpar{
+    Introduced a novel regularizer for Neural Network based Image Recognition
+    based on the \emph{visualizations} of the nodes of the neural
+    network. We leveraged the existence of a closed algebraic form of the
+    visualizations of the first layer nodes, and used it as a smoothness prior.
+    We show that the regularizer is a special case of the 
+    general Tikhonov regularization. Experimental results show that the 
+    visualization regularizers are an improvement over standard L2 regularizers.
+}
+
+\EntryGap
+
+\textbf{Advanced Machine Learning Course Project} \hfill Jan 2016 - Apr 2016 \\
+Data Matrix Size Reduction using Sampling for Scalable Machine Learning\\
+under \emph{Prof. Sourangshu Bhattacharya, IIT Kharagpur and Prof. Anirban Dasgupta, IIT Gandhinagar}
 
 \SmallEntryGap
 
-\emph{On Farey Table and its Compression for Space Optimization with Guaranteed Error Bounds} \\
-Guide: Dr. Partha Bhowmick, IIT Kharagpur \hfill May 2013 - Jul 2013 \\
-\begin{itemize}[noitemsep, nolistsep]
- \item Leveraged Number-Theoretic properties of Farey sequences to develop compression algorithms for the Farey table.
- \item Worked out expressions for the loss in accuracy and size of the compressed table.
-\end{itemize}
+\indentedpar{
+  Implemented various sampling and projection algorithms on synthetically generated
+  datasets and tested on binary SVM classification. We implemented Clarkson Woodruff's
+  feature sampling, Achlioptas' methods for euclidian distance preservations and 
+  low rank approximations, and leverage score based sampling.
+}
 
-%%%%%%%%%%%%%%%%%%%%%%%%
-%% OTHER PROJECTS     %%
-%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% OTHER PROJECTS     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \EntryGap
 
 \heading{Other Projects}
-\begin{itemize}
-  \setlength{\itemsep}{0.0em}
-  \item \emph{A Search Engine for Mathematical Formulae,} NLP Course Project \hfill Aug 2015 - Dec 2015\\
-  To search text and mathematical formulae in academic articles.
-  \item \emph{TinyC Compiler}, Compilers Course Project \hfill Jul 2014 - Nov 2014\\
+  \SmallEntryGap
+  \textbf{A Search Engine for Mathematical Formulae}, NLP Course Project \hfill Aug 2015 - Dec 2015\\
+  To search for text and mathematical formulae in academic articles.
+  \SmallEntryGap
+  
+  \textbf{TinyC Compiler}, Compilers Course Project \hfill Jul 2014 - Nov 2014\\
   A compiler for a C-like language.
-  \item \emph{Genetic Algorithm based Jigsaw Solver} \hfill Jan - 2014\\
+  \SmallEntryGap
+  
+  \textbf{Genetic Algorithm based Jigsaw Solver} \hfill Jan - 2014\\
   A jigsaw puzzle solver for images divided into uniform sized squares and randomly shuffled.
-\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ACADEMIC HONORS & AWARDS %%
@@ -209,22 +215,37 @@ Guide: Dr. Partha Bhowmick, IIT Kharagpur \hfill May 2013 - Jul 2013 \\
 
 \EntryGap
 \heading{Academic Honors and Awards}
-\begin{itemize}
- \setlength{\itemsep}{0.0em}
- \item \emph{Charubala Devi Memorial Prize} \hfill 2015\\
-Awarded for being the \textbf{best in order of merit} among all third year students.
-\item \emph{Viterbi-India Scholar} \hfill 2015\\
-One of the \textbf{20} scholars in India in the year of 2015.
-\item \emph{Indian National Physics Olympiad (INPhO) Awardee} \hfill 2012\\
-Selected among top \textbf{30} candidates in India to attend the training camp for the final stage of the Indian team selection for the International Physics Olympiad (IPhO).
-\item\emph{Kishore Vaigyanik Protsahan Yojana (KVPY) Scholar} \hfill 2011\\
-Scholarship sponsored by Dept. of Science and Technology, MHRD, Govt. of India.\\
-Secured \textbf{7th} rank in India.
-\item\emph{Indian National Mathematical Olympiad (INMO) Awardee} \hfill 2010\\
-Selected among top \textbf{30} candidates in India to attend the International Mathematical Olympiad Training Camp (IMOTC).
-\item\emph{Australian Mathematics Competition (AMC) Gold Medallist}\hfill 2009\\
-Recieved a Gold Medal in the Intermediate Division. One of the \textbf{23} other medallists in the world.
-\end{itemize}
+ \SmallEntryGap
+ 
+ \textbf{Goralal Syngal Scholarship} \hfill 2015 \& 2016\\
+ for academic excellence at IIT Kharagpur.
+ \SmallEntryGap
+ 
+ \textbf{Charubala Devi Memorial Prize} \hfill 2015\\
+  for being the best in order of merit among all third year students.
+  \SmallEntryGap
+  
+ \textbf{Viterbi-India Scholarhip} \hfill 2015\\
+  for funding a summer internship at USC. One of the 20 scholars in India.
+  \SmallEntryGap
+  
+ \textbf{Indian National Physics Olympiad (INPhO) Awardee} \hfill 2012\\
+  Qualified among 30 candidates in India. Selected to attend the 
+  International Physics Olympiad (IPhO) selection camp.
+  \SmallEntryGap
+  
+ \textbf{Kishore Vaigyanik Protsahan Yojana (KVPY) Scholar} \hfill 2011\\
+  Scholarship sponsored by Dept. of Science and Technology, MHRD, Govt. of India.\\
+  Secured \textbf{7th} rank in India.
+  \SmallEntryGap
+  
+ \textbf{Indian National Mathematical Olympiad (INMO) Awardee} \hfill 2010\\
+  Selected among top \textbf{30} candidates in India to attend the International Mathematical Olympiad Training Camp (IMOTC).
+  \SmallEntryGap
+  
+ \textbf{Australian Mathematics Competition (AMC) Gold Medallist}\hfill 2009\\
+  Recieved a Gold Medal in the Intermediate Division. One of the \textbf{23} other medallists in the world.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% OTHER HONORS & AWARDS %%
@@ -232,21 +253,20 @@ Recieved a Gold Medal in the Intermediate Division. One of the \textbf{23} other
 
 \EntryGap
 \heading{Other Honors and Awards}
-\begin{itemize}
-\item \emph{ACM ICPC 2015 \& 2016 World Finalist} \hfill 2015\\
-Our team BitBees qualified for the International Collegiate Programming Competition (ICPC) twice in 2015 \& 2016. One of the \textbf{7} teams from India.
-\end{itemize}
-
+\SmallEntryGap
+\textbf{ACM ICPC 2015 \& 2016 World Finalist} \hfill 2015\\
+Our team BitBees qualified for the International Collegiate Programming Competition (ICPC)\\
+twice, in 2015 \& 2016. One of the 7 teams from India.
 
 %%%%%%%%%%%%
 %% SKILLS %%
 %%%%%%%%%%%%
-
 \EntryGap
-\heading{Programming Languages and Tools}
-\EntryGap
-\textbf{Proficient:} C, C++, Python, Java, Theano\\
-\textbf{Basic:} Mathematica, Matlab, Caffe
+\heading{Technical Skills}
+\SmallEntryGap
+\textbf{Proficient in} C, C++, Python, Java, Bash, Matlab, Tensorflow, Numpy\\
+\textbf{Familiar with} Mathematica, HTML, Javascript, Caffe, Theano, Scikit-learn,\\
+Keras, Lasagne, Nltk, Stanford Core-NLP
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -254,22 +274,19 @@ Our team BitBees qualified for the International Collegiate Programming Competit
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 \EntryGap
-\heading{Relevant Courses}
+\heading{Coursework}
 \SmallEntryGap
-\textbf{Completed}
-\begin{tabbing}
-Machine Learning, ~~~~~~~~~~~~~~~~~~ \= Speech and Natural Language Processing, ~~~~~~~~~~~\= Probability and Statistics,\\
-Artificial Intelligence, \> Parallel and Distributed Algorithms, \> Information Retrieval, \\
-Matrix Algebra, \> Algorithms-I \& II, \> Discrete Mathematics,\\
-Advanced Graph Theory, \> Theory of Computation, \> Operating Systems,\\
-Computer Networks, \> Computer Organization and Architechture, \> Database Management Systems\\
-\end{tabbing}
+\textbf{Relevant}\\
+Machine Learning \mdot Advanced Machine Learning \mdot Probability and Statistics \mdot Speech and Natural Language Processing 
+\mdot Artificial Intelligence \mdot Matrix Algebra
 
 \SmallEntryGap
-\textbf{Ongoing}\\
-\begin{tabbing}
-Advanced Machine Learning,~~~~~~~~~~~~\= Operations Research, ~~~~~~~~~\=High Performance Computer Arch.,\\
-Distributed Systems
-\end{tabbing}
+\textbf{Others}\\
+Algorithms-I \& II \mdot Discrete Mathematics \mdot Parallel and Distributed Algorithms 
+\mdot Selected Topics in Algorithms \mdot Information Retrieval \mdot Computational Statistics
+\mdot Advanced Graph Theory \mdot Database Management Systems \mdot Operating Systems
+\mdot Computer Networks \mdot Computer Organization and Architecture \mdot Theory of Computation
+\mdot Operations Research \mdot High Performance Computer Architecture \mdot Distributed Systems
+\mdot Cryptography
 
 \end{document}
