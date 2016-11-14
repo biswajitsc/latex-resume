@@ -16,7 +16,7 @@
 \usepackage{booktabs}
 \usepackage{url}
 \usepackage{parskip}
-\usepackage[a4paper, total={7in,10in}]{geometry}
+\usepackage[a4paper, total={7in, 10in}, top=1in]{geometry}
 
 \pagenumbering{gobble}
 
@@ -33,7 +33,7 @@
   \vspace{0.4em}
 }
 
-\newcommand{\EntryGap}{\vspace{0.5cm}}
+\newcommand{\EntryGap}{\vspace{0.4	cm}}
 \newcommand{\SmallEntryGap}{\vspace{0.2cm}}
 \newcommand{\mdot}{$\ \ \cdot\ \ $}
 
@@ -57,9 +57,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\Large \textbf{Biswajit Paria}}\\
-5th year undergraduate (dual degree) \hfill biswajitsc@iitkgp.ac.in\\
-Dept. of Computer Science and Engineering \hfill biswajitsc@gmail.com\\
+{\Large \textbf{Biswajit Paria}} \hfill biswajitsc@iitkgp.ac.in\\
+5th year undergraduate (dual degree) \hfill biswajitsc@gmail.com\\
+Dept. of Computer Science and Engineering \hfill \url{https://biswajitsc.github.io}\\
 Indian Institute of Technology Kharagpur \hfill  +91-8348949676  
 \EntryGap
 
@@ -69,92 +69,61 @@ Indian Institute of Technology Kharagpur \hfill  +91-8348949676
 \heading{Education}
 
 \textbf{Indian Institute of Technology Kharagpur, India} \hfill Jul 2012 - Apr 2017\\
-Bachelor and Master of Technology (dual degree) with Honours\\
-in Computer Science and Engineering\\
-GPA 9.77/10.0, highest among final year dual degree students.
+BTech MTech (dual degree) in Computer Science and Engineering\\
+GPA 9.77/10.0, \textbf{ranked 1} among final year dual degree students.
 
 \SmallEntryGap
 \textbf{Kendriya Vidyalaya IIT Kharagpur} \hfill Jul 2010 - Apr 2012\\
-All India Senior School Certificate Examination (AISSCE)\\
-Central Board of Secondary Education (CBSE)\\
+All India Senior School Certificate Examination (AISSCE), CBSE board\\
 Percentage score 92.4\%
 
 \SmallEntryGap
 \textbf{Kendriya Vidyalaya IIT Kharagpur} \hfill Apr 2005 - Apr 2010\\
-All India Secondary School Examination (AISSE)\\
-Central Board of Secondary Education (CBSE)\\
+All India Secondary School Examination (AISSE), CBSE board\\
 GPA 9.8/10.0
 
 \EntryGap
 \heading{Interests}
 
-My broad interests are in Machine Learning and AI. Currently I am working
-on general deep learning including unsupervised learning methods
-such as Generative Adversarial Networks and Variational methods.
-I am also interested in Reinforcement Learning after having recently taken
-a formal course on it.
+My broad area of interest is machine learning. I am currently working on deep learning,
+particularly on generative models including GANs and Variational Autoencoders.
+In the future I want to work in more mathematically involved areas including statistical
+machine learning, optimization, algorithms, and learning theory.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Papers %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \EntryGap
+
+\heading{Papers}
+  
+  Avisek Lahiri, \textbf{Biswajit Paria}, and Prabir Kumar Biswas. 
+  ``Forward Stagewise Additive Model for Collaborative Multiview Boosting.''
+  \emph{IEEE Transactions in Neural Networks and Learning Systems}. 2016.
+  (Accepted, in press)
+  
+  \SmallEntryGap
+  Avisek Lahiri, \textbf{Biswajit Paria}, and Prabir Kumar Biswas.
+  ``CoMA-Boost: Cooperative Multi Agent AdaBoost.''
+  \emph{Indian Conference on Computer Vision, Graphics and Image Processing}. 2016.
+  (Accepted, oral presentation)
+  
+  \SmallEntryGap
+  \textbf{Biswajit Paria}, Anirban Santara, and Pabitra Mitra.
+  ``Visualization Regularizers for Neural Network based Image Recognition.''
+  \emph{arXiv preprint arXiv:1604.02646}. 2016. (Pre-print)
+  
+  \SmallEntryGap
+  \textbf{Biswajit Paria}, Sanjoy Pratihar, and Partha Bhowmick.
+  ``On Farey Table and its Compression for Space Optimization with Guaranteed Error Bounds.''
+  2016. (Submitted. Please request to get a copy for personal viewing.)
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTERNSHIPS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\heading{Internships}
-
-\textbf{Indian Institute of Science, Bangalore, India} \hfill Summer 2016\\
-\textbf{Natural Language Inference (NLI) using Deep Learning for NLP}\\
-under Prof. Ambedkar Dukkipati
-
-\SmallEntryGap
-
-\indentedpar{
-  Worked with the Stanford NLI dataset. Given two sentences, the task
-  is to determine whether the sentences are related as an entailment, contradiction
-  or are neutral. We explored models using LSTMs, Attention
-  Models, and Dependency Parses. Eventually, we came up with an hybrid model which
-  is currently under preparation for submission in a reputed conference.
-}
-
-\SmallEntryGap
-
-\textbf{University of Southern California, Los Angeles, USA} \hfill Summer 2015\\
-\textbf{Computational Phenotyping using Deep Neural Networks}\\
-under Prof. Yan Liu
-
-\SmallEntryGap
-
-\indentedpar{
-  Worked with ICU time series data consisting of a multitude of medical parameters
-  and used deep learning with a laplacian prior regularizer, to predict health outcomes. We
-  performed causality analysis on the final layer nodes, analyzed the activations of 
-  the most \emph{causal} nodes using decision trees, and extracted their maximally activating 
-  inputs. This analysis is a step towards developing a robust automated symptom analyzer.
-}
-
-\SmallEntryGap
-\textbf{Indian Institute of Technology Kharagpur, India} \hfill Summer 2014\\
-\textbf{On Farey Table and its Compression for Space Optimization with Guaranteed Error Bounds}\\
-under Prof. Partha Bhowmick
-
-\SmallEntryGap
-
-\indentedpar{
-  Studied the number theoretic properties of Farey Sequences and the
-  Farey Table, and came up with a novel algorithm for a lossy compression of the 
-  Farey Table. The Farey Table is an useful data-structure in digital geometry.
-  It's quadratic size ($\Theta(n^2)$) prohibits its use for large dimensions. The
-  compressed table has a size of ($O(n\log n)$), thus allowing table creation for
-  large $n$.
-}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Projects %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \EntryGap
-\heading{Research Projects}
 
-\textbf{Bachelor's Thesis} \hfill 2015 - 2016\\
+\heading{Internships and Projects}
+
+\textbf{Bachelor's Thesis, Indian Institute of Technology Kharagpur} \hfill 2015 - 2016\\
 \textbf{Visualization Regularizers for Neural Network based Image Recognition}\\
 Advisor: Prof. Pabitra Mitra
 
@@ -172,67 +141,81 @@ Advisor: Prof. Pabitra Mitra
 
 \SmallEntryGap
 
-\textbf{Advanced Machine Learning Course Project} \hfill Spring 2016 \\
-\textbf{Data Matrix Size Reduction using Sampling for Scalable Machine Learning}\\
-under Prof. Sourangshu Bhattacharya, IIT Kharagpur and Prof. Anirban Dasgupta, IIT Gandhinagar
+\textbf{Indian Institute of Technology Kharagpur, India} \hfill 2015 - 2016\\
+\textbf{Forward Stagewise Additive Model for Collaborative Multiview Boosting.}\\
+with Prof. P.K. Biswas
 
 \SmallEntryGap
 
 \indentedpar{
-  Implemented various sampling and projection algorithms on synthetically generated
-  datasets and tested on binary SVM classification. We implemented Clarkson Woodruff's
-  feature sampling, Achlioptas' methods for euclidian distance preservations and 
-  low rank approximations, and leverage score based sampling.
+  On AdaBoost in a multiview setting.
+  Introduced a notion of ‘difficulty’ of an example. Difficulty ranges 
+  from -1 to 1 and is a linear function of the number of views the example
+  was misclassified in. The weights are updated as a function of the 
+  difficulty the example rather than on whether the example was misclassified
+  or not. We show that this is an improvement over other multiview frameworks. Analogous
+  to AdaBoost, we derived bounds on 
+  the empirical risk and maximum margin.
 }
 
+\SmallEntryGap
 
-%%%%%%%%%%%%%%%%%%%%%%%%%% Papers %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\EntryGap
+\textbf{Indian Institute of Science, Bangalore, India} \hfill Summer 2016\\
+\textbf{Natural Language Inference (NLI) using Deep Learning for NLP}\\
+with Prof. Ambedkar Dukkipati
 
-\heading{Papers}
-  
-  Avisek Lahiri, Biswajit Paria, Prabir Kumar Biswas. 
-  \textbf{Forward Stagewise Additive Model for Collaborative Multiview Boosting.}
-  \emph{IEEE Transactions in Neural Networks and Learning Systems}, 2016.
-  (Under minor revision)
-  
-  \SmallEntryGap
-  Biswajit Paria, Anirban Santara, Pabitra Mitra.
-  \textbf{Visualization Regularizers for Neural Network based Image Recognition.}
-  \emph{arXiv preprint arXiv:1604.02646}, 2016
-  
-  \SmallEntryGap
-  Sandipan Sikdar, Marcin Bodych, Rajib Ranjan Maiti, Biswajit Paria, 
-  Niloy Ganguly, Tyll Krueger, Animesh Mukherjee.
-  \textbf{On the broadcast of segmented messages in dynamic networks}.
-  \emph{IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS)}, 2015.
+\SmallEntryGap
 
+\indentedpar{
+  Worked with the Stanford NLI dataset. Given two sentences, the task
+  is to determine whether the sentences are related as an entailment, contradiction
+  or neutral. We explored models using LSTMs, Attentions, and Dependency Parses,
+  and finally came up with a hybrid model. This work
+  has been submitted to a reputed conference.
+}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%% OTHER PROJECTS     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\SmallEntryGap
 
-\EntryGap
+\textbf{University of Southern California, Los Angeles, USA} \hfill Summer 2015\\
+\textbf{Feature Learning in Clinical Time Series using Deep Learning}\\
+with Prof. Yan Liu
 
-\heading{Other Projects}
-  
-  \textbf{Learning to Play 2-player Computer Soccer using Deep Reinforcement Learning} \hfill Autumn 2016\\
-  Ongoing Design Lab project.
-  \SmallEntryGap
-  
-  \textbf{Distributed P2P File Sharing and Search System}, Distributed Systems Course Project \hfill Spring 2016\\
-  Implemented a P2P file sharing platform for distributed search and download,\\
-  with replication of the file database.
-  \SmallEntryGap
-  
-  \textbf{A Search Engine for Mathematical Formulae}, NLP Course Project \hfill Autumn 2015\\
-  To search for text and mathematical formulae in academic articles.
-  \SmallEntryGap
-  
-  \textbf{TinyC Compiler}, Compilers Course Project \hfill Autumn 2014\\
-  A compiler for a C-like language.
-  \SmallEntryGap
-  
-  \textbf{Genetic Algorithm based Jigsaw Solver} \hfill Jan - 2014\\
-  A jigsaw puzzle solver for images divided into uniform sized squares and randomly shuffled.
+\SmallEntryGap
+
+\indentedpar{
+  Worked with ICU time series data consisting and used deep learning with a laplacian 
+  prior regularizer to predict health outcomes. We performed causality analysis on the 
+  final layer nodes, analyzed the activations of the most \emph{causal} nodes 
+  using decision trees, and extracted their maximally activating inputs. This analysis
+  is a step towards understanding neural networks in the context of medical data.
+}
+
+\SmallEntryGap
+\textbf{Indian Institute of Technology Kharagpur, India} \hfill Summer 2014\\
+\textbf{On Farey Table and its Compression for Space Optimization with Guaranteed Error Bounds}\\
+with Prof. Partha Bhowmick
+
+\SmallEntryGap
+
+\indentedpar{
+  Studied the number theoretic properties of Farey Sequences and the
+  Farey Table, and came up with a novel algorithm for a lossy compression of the 
+  Farey Table. The Farey Table is an useful data-structure in digital geometry.
+  It's quadratic size ($\Theta(n^2)$) prohibits its use for large dimensions. The
+  compressed table has a size of ($O(n\log n)$), thus allowing table creation for
+  larger $n$.
+}
+
+\SmallEntryGap
+
+\textbf{Other Projects}
+
+\SmallEntryGap
+
+\indentedpar{
+  I have worked on numerous other projects, including developmental projects. My GitHub
+  profile (\url{https://github.com/biswajitsc}) lists most of the projects I have worked on.
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ACADEMIC HONORS & AWARDS %%%%%%%%%%%%%%%%%%%%%%
@@ -244,12 +227,8 @@ under Prof. Sourangshu Bhattacharya, IIT Kharagpur and Prof. Anirban Dasgupta, I
  \textbf{Goralal Syngal Scholarship} \hfill 2015 \& 2016\\
  for academic excellence at IIT Kharagpur.
  \SmallEntryGap
- 
- \textbf{Charubala Devi Memorial Prize} \hfill 2015\\
-  for being the best in order of merit among all third year students.
-  \SmallEntryGap
   
- \textbf{Viterbi-India Scholarhip} \hfill 2015\\
+ \textbf{Viterbi-India Scholarship} \hfill 2015\\
   for funding a summer internship at USC. One of the 20 scholars in India.
   \SmallEntryGap
   
@@ -292,8 +271,8 @@ under Prof. Sourangshu Bhattacharya, IIT Kharagpur and Prof. Anirban Dasgupta, I
 \EntryGap
 \heading{Technical Skills}
 \SmallEntryGap
-\textbf{Proficient in} C, C++, Python, Java, Bash, Matlab, Tensorflow, Numpy\\
-\textbf{Familiar with} Mathematica, HTML, Javascript, Caffe, Theano, Scikit-learn,\\
+\textbf{Proficient:} C, C++, Python, Java, Bash, Matlab, Tensorflow, Numpy\\
+\textbf{Familiar:} Mathematica, HTML, Javascript, Caffe, Theano, Scikit-learn,
 Keras, Lasagne, Nltk, Stanford Core-NLP
 
 
@@ -302,38 +281,23 @@ Keras, Lasagne, Nltk, Stanford Core-NLP
 
 
 \EntryGap
-\heading{Coursework}
-
-\textbf{Relevant}\\
-Machine Learning \mdot Advanced Machine Learning \mdot Probability and Statistics 
-\mdot Speech and Natural Language Processing \mdot Artificial Intelligence 
-\mdot Matrix Algebra \mdot Information Retrieval \mdot Reinforcement Learning
-(ongoing NPTEL course by B. Ravindran, IIT Madras)
+\heading{Relevant Coursework}
 
 \SmallEntryGap
-\textbf{Others}\\
-Algorithms-I \& II \mdot Discrete Mathematics \mdot Parallel and Distributed Algorithms 
-\mdot Selected Topics in Algorithms  \mdot Computational Statistics
-\mdot Advanced Graph Theory \mdot Database Management Systems \mdot Operating Systems
-\mdot Computer Networks \mdot Computer Organization and Architecture \mdot Theory of Computation
-\mdot Operations Research \mdot High Performance Computer Architecture \mdot Distributed Systems
-\mdot Cryptography
+\begin{tabular}{lll}
+ Machine Learning & Advanced Machine Learning & Probability and Statistics\\
+ Computational Statistics & Algorithms I and II & Selected Topics in Algorithms\\
+ Artificial Intelligence & Matrix Algebra & Information Retrieval\\
+ Speech and Natural Language Processing & Advanced Graph Theory
+\end{tabular}
 
-\EntryGap
-\heading{Extra Curricular Activities}
-\SmallEntryGap
-Machine Learning Teaching Assistant \hfill Autumn 2016\\
-Responsibilities include interaction with students, and supervising and
-and evaluating term projects.
-
-\SmallEntryGap
-Machine Learning Reading Group\hfill 2016\\
-Organizer and speaker at the weekly machine learning reading group.
-
-\SmallEntryGap
-National Service Scheme \hfill 2012-2014\\
-Helped under-privileged children in academics and created an enjoyable school 
-atmosphere for learning.
-
+% \SmallEntryGap
+% \textbf{Others}\\
+% Algorithms-I \& II \mdot Discrete Mathematics \mdot Parallel and Distributed Algorithms 
+% \mdot Selected Topics in Algorithms  \mdot Computational Statistics
+% \mdot Advanced Graph Theory \mdot Database Management Systems \mdot Operating Systems
+% \mdot Computer Networks \mdot Computer Organization and Architecture \mdot Theory of Computation
+% \mdot Operations Research \mdot High Performance Computer Architecture \mdot Distributed Systems
+% \mdot Cryptography
 
 \end{document}
